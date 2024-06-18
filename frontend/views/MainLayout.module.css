@@ -1,0 +1,48 @@
+.drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: var(--lumo-space-m);
+}
+
+.drawer header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lumo-space-m);
+}
+
+.drawer header a {
+  display: block;
+  color: inherit;
+  font-weight: 500;
+  border-radius: var(--lumo-border-radius-m);
+  padding: var(--lumo-space-xs) var(--lumo-space-s);
+}
+
+.drawer header a:hover {
+  text-decoration: none;
+}
+
+.drawer header a:active {
+  color: var(--lumo-header-text-color);
+}
+
+.drawer header a:active:focus {
+  background-color: var(--lumo-contrast-5pct);
+}
+
+.drawer header a:global(.active) {
+  color: var(--lumo-primary-text-color);
+  background-color: var(--lumo-primary-color-10pct);
+}
+
+@supports selector(:focus-visible) {
+  .drawer header a {
+    outline: none;
+  }
+
+  .drawer header a:focus-visible {
+    box-shadow: 0 0 0 2px var(--lumo-primary-color-50pct);
+  }
+}
